@@ -1,7 +1,6 @@
-#ZhengFuchen(21048855g)
-# Q3: 
+
 library(plotrix)
-# (a)Download the Iris data set,Since it is buildin in R
+# Download the Iris data set,Since it is buildin in R
 ## we can just import data iris
 data(iris)
 ## we check the data,The data should be 3 classes of 50 instance each.
@@ -12,7 +11,7 @@ attributes(data1)
 data1 <- na.omit(data1)  #Removing the missing values
 pie3D(table(data1$Species),labels=rownames(table(data1$Species)),explode=0.1)
 
-# (b):Preprocess the data by subtracting the mean and dividing by the
+# Preprocess the data by subtracting the mean and dividing by the
 # standard deviation of each attribute value. The resulting data should
 # be zero-mean with variance 1.
 
@@ -42,7 +41,7 @@ sd(data1$Sepal.Width)
 sd(data1$Petal.Length)
 sd(data1$Petal.Width)
 
-#(c) Compute the covariance matrix.  
+#Compute the covariance matrix.  
 data_cov <- data.frame(Sepal.Length = data1$Sepal.Length,
                        Sepal.Width = data1$Sepal.Width,
                        Petal.Length = data1$Petal.Length,
@@ -85,7 +84,7 @@ eigenvector
 
 
 
-#(e) Project the data onto its first two principal components and plot
+#Project the data onto its first two principal components and plot
 #the results.
 
 
@@ -109,9 +108,8 @@ fviz_pca_ind(iris.pr, geom.ind = "point", pointshape = 21,
   theme(plot.title = element_text(hjust = 0.5))
 
 
-#Q4: Classification using the Iris data: trained a classifier for the Iris data
-#using (a) Bayes’ LDA and (b) any other method you know. (c) How
-#do you compare the two classifiers in (a) and (b)?
+#Classification using the Iris data: trained a classifier for the Iris data
+#using (a) Bayes’ LDA and (b) any other method 
 library(MASS)
 library(ggplot2)
 #(a): 
@@ -184,7 +182,6 @@ accuracy(SVM_tab)
 #accuracy = 0.963
 
 
-#(c): 
 #LDA assume data is normally distributed, but SVM makes no assumptions about data at all.
 #Therefore, LDA is the best discriminator when all assumptions are actually met,
 #SVM is a very flexible method so that it is hard to interpret the results from a SVM classifier, compared to LDA.
